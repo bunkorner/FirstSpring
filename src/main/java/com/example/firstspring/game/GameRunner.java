@@ -1,20 +1,16 @@
 package com.example.firstspring.game;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
 public class GameRunner {
-    @Autowired
-    private GamingConsole game;
-    public GameRunner(GamingConsole game) {
-        this.game = game;
+    GamingConsole gamingConsole;
+    public GameRunner(GamingConsole gamingConsole) {
+        this.gamingConsole = gamingConsole;
     }
 
     public void run() {
-        game.up();
-        game.down();
-        game.left();
-        game.right();
+        System.out.println("Running game: " + gamingConsole);
+        gamingConsole.up();
+        gamingConsole.down();
+        gamingConsole.left();
+        gamingConsole.right();
     }
 }
